@@ -7,7 +7,7 @@ import fundsRouter from "./routes/funds.js";
 import fetchNav from "./jobs/fetchNav.js";
 
 const app = express();
-app.use(cors({ origin: process.env.CORS_ORIGIN }));
+app.use(cors());
 app.use(express.json());
 
 app.get("/api/health", (req, res) => res.json({ status: "ok" }));
