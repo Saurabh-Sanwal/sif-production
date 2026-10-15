@@ -1,6 +1,8 @@
 // The only place that knows the server address.
 // When you host the backend on Render, change this one line.
-const API = "http://localhost:5000/api";
+const API = import.meta.env.DEV
+  ? "http://localhost:5000/api"
+  : "https://sif-production.onrender.com/api";
 
 async function get(path) {
   const res = await fetch(API + path);
